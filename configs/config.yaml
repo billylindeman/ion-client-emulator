@@ -134,8 +134,8 @@ emulator:
           lib: mupen64plus_next_libretro
           config: mupen64plus_next_libretro.cfg
           roms: [ "n64", "v64", "z64" ]
-          width: 320
-          height: 240
+          width: 640 
+          height: 480 
           isGlAllowed: true
           usesLibCo: true
 

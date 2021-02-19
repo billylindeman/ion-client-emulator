@@ -22,8 +22,8 @@ import (
 )
 
 var (
-	viewportWidth  int = 320
-	viewportHeight int = 240
+	viewportWidth  int = 640
+	viewportHeight int = 480
 )
 
 // getMetadata returns game info from a path

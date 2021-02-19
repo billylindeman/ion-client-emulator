@@ -2,7 +2,8 @@ module github.com/billylindeman/ion-client-emulator
 
 go 1.15
 
-// replace github.com/pion/ion-cluster => github.com/cryptagon/ion-cluster v0.0.0-20210219163655-1c8cf648e5d2
+// replace github.com/pion/ion-cluster => github.com/cryptagon/ion-cluster v0.0.0-20210219195217-35d3ebc1f01b
+
 replace github.com/pion/ion-cluster => /Users/billy/Development/go/src/github.com/pion/ion-cluster
 
 replace google.golang.org/grpc => google.golang.org/grpc v1.26.0

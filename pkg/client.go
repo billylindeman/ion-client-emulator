@@ -8,6 +8,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/giongto35/cloud-game/v2/pkg/emulator/libretro/nanoarch"
 	"github.com/pion/interceptor"
 	"github.com/pion/ion-cluster/pkg/client"
 	log "github.com/pion/ion-log"
@@ -91,6 +92,13 @@ func clientMain(cmd *cobra.Command, args []string) error {
 	log.Debugf("tracks published")
 
 	t := time.NewTicker(time.Second * 5)
+
+	inputDc, err := c.CreateDatachannel("emulator-input")
+	inputDc.OnMessage(func(m webrtc.DataChannelMessage) {
+		log.Debugf("inputDatachannel got data: %s", m.Data)
+		producer.inputChannel <- nanoarch.InputEvent{RawState: m.Data, PlayerIdx: 0, ConnID: ""}
+	})
+
 	for {
 		select {
 		case <-t.C:
